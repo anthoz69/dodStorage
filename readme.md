@@ -42,7 +42,7 @@ If you discover any security related issues, please email st.anthoz69@gmail.com 
 
 ## License
 
-MIT. Please see the [license file](license.md) for more information.
+MIT. Please see the [license file](LICENSE) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/anthoz69/dodstorage.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/anthoz69/dodstorage.svg?style=flat-square
