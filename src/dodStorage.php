@@ -34,7 +34,7 @@ class dodStorage {
     public function resizeImage($file, $storeFolder, $width = 500, $height = 500) {
         $this->resultFilePath = $file->hashName($storeFolder);
         $img = Image::make($file);
-        $this->resultFile = $img->fit($width, $height);
+        $this->resultFile = $img->resize($width, $height);
         return $this->save();
     }
 }
