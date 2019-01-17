@@ -37,4 +37,24 @@ class dodStorage {
         $this->resultFile = $img->resize($width, $height);
         return $this->save();
     }
+
+    public function cropImageRatio($file, $storeFolder, $width = 500, $height = 500) {
+        $this->resultFilePath = $file->hashName($storeFolder);
+        $img = Image::make($file);
+        $this->resultFile = $img->fit($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        return $this->save();
+    }
+
+    public function resizeImageRatio($file, $storeFolder, $width = 500, $height = 500) {
+        $this->resultFilePath = $file->hashName($storeFolder);
+        $img = Image::make($file);
+        $this->resultFile = $img->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        return $this->save();
+    }
 }
